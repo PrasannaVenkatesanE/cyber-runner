@@ -1,0 +1,212 @@
+/**
+ * Cyber Runner - Global Styles
+ * Futuristic theme with responsive design
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a2e;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0a0a2e 0%, #16213e 100%);
+}
+
+/* Popup Overlay Styles */
+#popup-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    min-width: 400px;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+#popup-overlay.popup-hidden {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+    pointer-events: none;
+}
+
+#popup-overlay.popup-good {
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.2) 0%, rgba(0, 200, 0, 0.2) 100%);
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+#popup-overlay.popup-bad {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.2) 0%, rgba(200, 0, 0, 0.2) 100%);
+    border: 3px solid #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.popup-body {
+    margin-top: 10px;
+}
+
+.popup-category {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #00ffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.popup-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Pause Overlay */
+#pause-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+#pause-overlay.popup-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pause-content {
+    text-align: center;
+    padding: 40px;
+    background: rgba(10, 10, 46, 0.95);
+    border: 3px solid #00ffff;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.pause-content h2 {
+    font-size: 48px;
+    color: #00ffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.pause-content p {
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #popup-overlay {
+        min-width: 90%;
+        max-width: 90%;
+        padding: 15px;
+    }
+    
+    .popup-header {
+        font-size: 20px;
+    }
+    
+    .popup-category {
+        font-size: 14px;
+    }
+    
+    .popup-description {
+        font-size: 12px;
+    }
+    
+    .pause-content {
+        padding: 30px 20px;
+    }
+    
+    .pause-content h2 {
+        font-size: 36px;
+    }
+    
+    .pause-content p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-header {
+        font-size: 18px;
+    }
+    
+    .popup-description {
+        font-size: 11px;
+    }
+    
+    .pause-content h2 {
+        font-size: 28px;
+    }
+}
+
+/* Prevent text selection during gameplay */
+canvas {
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Scrollbar styling (if needed) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00ffff;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00ccff;
+}
+
